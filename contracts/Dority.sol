@@ -32,6 +32,11 @@ contract Dority {
         address owner
     );
 
+    event OrganisationUpdated(
+        uint256 indexed id,
+        address owner
+    );
+
     event Donate(
         uint256 indexed id,
         address donor,
@@ -80,6 +85,7 @@ contract Dority {
         organisations[_id].ipfsHash = _hash;
         organisations[_id].needed = _needed;
         organisations[_id].isFullfilled = _isFullfilled;
+        emit OrganisationUpdated(_id, msg.sender);
     }
 
     function donate(uint256 _id) public payable isValidId(_id) isOrganisationFulfilled(_id) {
