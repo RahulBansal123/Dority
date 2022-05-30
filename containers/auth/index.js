@@ -42,7 +42,7 @@ const Auth = () => {
             <div className="text-center">
               <img
                 src="/assets/images/logo.png"
-                alt="Template"
+                alt="logo"
                 width="80%"
                 className="mx-auto hover:scale-125 transition-all duration-500"
               />

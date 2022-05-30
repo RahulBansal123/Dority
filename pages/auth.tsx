@@ -16,7 +16,7 @@ const Auth = () => {
   return (
     <div className="flex flex-col items-center justify-start min-h-screen pb-2">
       <Head>
-        <title>Template</title>
+        <title>Dority | Login</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="container py-4">

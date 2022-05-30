@@ -4,11 +4,9 @@ function Footer() {
   return (
     <footer className="container mt-10">
       <div className="w-full px-4 sm:px-6">
-        <div className="w-full flex py-8 md:py-12 border-t border-gray-200">
-          {/* 1st block */}
-          <div className="flex items-center justify-start flex-1">
+        <div className="w-full grid grid-cols-2 md:grid-cols-3 py-8 md:py-12 border-t border-gray-200">
+          <div className="flex col-span-2 md:col-span-1 items-center justify-center md:justify-start mb-5 md:mb-0">
             <div>
-              {/* Logo */}
               <Link href="/" className="inline-block" aria-label="Dority">
                 <img
                   src="/assets/images/logo.png"
@@ -19,8 +17,7 @@ function Footer() {
             </div>
           </div>
 
-          {/* 2th block */}
-          <div className="flex-1 text-center">
+          <div className="text-center">
             <h6 className="text-gray-800 font-medium mb-2">Subscribe</h6>
             <p className="text-sm text-gray-600 mb-4">
               Stay in touch with Dority
@@ -65,8 +62,7 @@ function Footer() {
             </form>
           </div>
 
-          {/* 3rd block */}
-          <div className="flex-1 text-right">
+          <div className="text-right">
             <h6 className="text-gray-800 font-medium mb-2">Find Us</h6>
             <Link
               href="#"

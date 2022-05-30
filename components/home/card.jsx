@@ -37,16 +37,16 @@ const Card = ({ data, contract }) => {
   };
 
   return (
-    <div className="grid grid-cols-3 border mx-4 p-2 rounded-xl shadow-md">
-      <div className="col-span-1 h-full flex items-center">
+    <div className="grid grid-cols-3 border mx-4 p-2 rounded-xl shadow-md overflow-hidden">
+      <div className="col-span-3 md:col-span-1 h-full flex items-center">
         <img
           src={details.url ?? '/assets/images/placeholder.jpeg'}
           className="w-full h-52 rounded-xl"
         />
       </div>
-      <div className="col-span-2 px-3 flex flex-col h-full">
+      <div className="col-span-3 md:col-span-2 px-3 flex flex-col h-full">
         <h1 className="text-xl text-center">{details.name}</h1>
-        <p className="text-gray-500 text-center my-3 flex-1">
+        <p className="text-gray-500 text-center my-3 flex-1 break-all whitespace-normal">
           {details.description}
         </p>
         {showInput && (

@@ -58,19 +58,19 @@ const Group = ({ contract }) => {
   };
   return (
     <main className="container py-4 flex flex-col md:flex-row">
-      <div className="w-3/4 border mx-auto px-4 py-5 rounded-xl">
+      <div className="w-11/12 md:w-3/4 border mx-auto px-4 py-5 rounded-xl">
         <div className="grid grid-cols-3">
-          <div className="col-span-1 flex items-center">
+          <div className="col-span-3 md:col-span-1 flex items-center">
             <img
               src={details.image ?? '/assets/images/placeholder.jpeg'}
               className="w-full h-48 rounded-xl"
             />
           </div>
-          <div className="col-span-2 px-3 flex flex-col">
+          <div className="col-span-3 md:col-span-2 px-3 flex flex-col mt-5 md:mt-0">
             <h1 className="text-2xl font-semibold text-center">
               {details.name}
             </h1>
-            <p className="text-gray-500 text-lg text-center my-3 flex-1">
+            <p className="text-gray-500 text-lg text-center my-3 flex-1 break-all whitespace-normal">
               {details.description}
             </p>
             {showInput && (

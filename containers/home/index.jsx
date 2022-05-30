@@ -23,7 +23,7 @@ const Home = ({ contract }) => {
 
   return (
     <main className="container py-4 flex flex-col md:flex-row">
-      <div className="w-full grid grid-cols-2 px-4 py-5 rounded-xl">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 px-4 py-5 rounded-xl">
         {data.map((item, index) => (
           <Card key={index} data={item} contract={contract} />
         ))}

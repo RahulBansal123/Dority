@@ -10,13 +10,13 @@ const Header = () => {
       <div className="flex mx-auto flex-col md:flex-row items-center md:justify-between py-5 px-10">
         <div className="flex flex-row space-x-2 items-center">
           <p
-            className="text-3xl tracking-wide font-bold  cursor-pointer"
+            className="text-3xl tracking-wide font-bold cursor-pointer"
             onClick={() => router.push('/')}
           >
             Dority
           </p>
         </div>
-        <div className="flex flex-row space-x-2 items-center cursor-pointer">
+        <div className="flex flex-row space-x-2 items-center cursor-pointer mt-2 md:mt-0">
           <span className="overflow-ellipsis overflow-hidden">
             {account?.slice(0, 12)}...
           </span>
