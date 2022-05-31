@@ -43,8 +43,9 @@ export async function get(cid: string) {
   }
   const metadata = await res.json();
 
+  const extractImageCID = metadata.image?.split('/')[2];
   const extractImage = metadata.image?.split('/').splice(3)?.join('/');
-  const url = `https://${cid}.ipfs.dweb.link/${encodeURIComponent(
+  const url = `https://${extractImageCID}.ipfs.dweb.link/${encodeURIComponent(
     extractImage
   )}`;
   return { ...metadata, url };

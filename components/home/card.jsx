@@ -13,7 +13,7 @@ const Card = ({ data, contract }) => {
   const [details, setDetails] = useState({
     name: '',
     description: '',
-    image: '',
+    url: '',
   });
 
   useEffect(() => {
@@ -37,18 +37,26 @@ const Card = ({ data, contract }) => {
   };
 
   return (
-    <div className="grid grid-cols-3 border mx-4 p-2 rounded-xl shadow-md overflow-hidden">
-      <div className="col-span-3 md:col-span-1 h-full flex items-center">
+    <div className="flex flex-col border mx-4 p-2 rounded-xl shadow-md overflow-hidden">
+      <div className="h-full flex items-center">
         <img
           src={details.url ?? '/assets/images/placeholder.jpeg'}
-          className="w-full h-52 rounded-xl"
+          className="w-full h-64 rounded-xl"
         />
       </div>
-      <div className="col-span-3 md:col-span-2 px-3 flex flex-col h-full">
+      <div className="mt-2 px-3 flex flex-col h-full">
         <h1 className="text-xl text-center">{details.name}</h1>
         <p className="text-gray-500 text-center my-3 flex-1 break-all whitespace-normal">
           {details.description}
         </p>
+
+        <p
+          className="mx-auto text-center text-xs border border-[#16558f] text-[#16558f] p-2 rounded-xl mb-3 truncate"
+          style={{ width: 'fit-content' }}
+        >
+          Raised: {web3.utils.fromWei(data.raised)} MATIC
+        </p>
+
         {showInput && (
           <div className="flex items-center">
             <input
@@ -64,7 +72,7 @@ const Card = ({ data, contract }) => {
         <div className="flex">
           <button
             className="bg-gradient-to-r from-[#16558f] to-[#0583d2] flex-1 py-2 px-5 text-center rounded-xl text-white hover:shadow-md hover:bg-[#0583d2] transition-all mx-3"
-            onClick={() => router.push('/1')}
+            onClick={() => router.push(`/${data.id}`)}
           >
             View
           </button>

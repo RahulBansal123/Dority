@@ -22,11 +22,12 @@ const Group = ({ contract }) => {
   const [details, setDetails] = useState({
     name: '',
     description: '',
-    image: '',
+    url: '',
   });
   const [value, setValue] = useState(0);
   const [showInput, setShowInput] = useState(false);
   const [donors, setDonors] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const getData = useCallback(async () => {
     const group = await contract.methods.organisations(id).call();
@@ -45,15 +46,17 @@ const Group = ({ contract }) => {
 
   const donate = async () => {
     try {
+      setLoading(true);
       const res = await contract.methods.donate(data.id).send({
         from: account,
         value: web3.utils.toWei(value.toString(), 'ether'),
-        gasLimit: 100000,
       });
       setShowInput(false);
       await getData();
     } catch (error) {
       console.error(error);
+    } finally {
+      setLoading(false);
     }
   };
   return (
@@ -62,7 +65,7 @@ const Group = ({ contract }) => {
         <div className="grid grid-cols-3">
           <div className="col-span-3 md:col-span-1 flex items-center">
             <img
-              src={details.image ?? '/assets/images/placeholder.jpeg'}
+              src={details.url ?? '/assets/images/placeholder.jpeg'}
               className="w-full h-48 rounded-xl"
             />
           </div>
@@ -87,10 +90,11 @@ const Group = ({ contract }) => {
             )}
             <div className="flex">
               <button
-                className="bg-[#f6f5f3] flex-1 py-2 px-5 text-center rounded-xl text-black shadow hover:shadow-md hover:bg-[#ebebeb] transition-all mx-3"
+                className="bg-[#f6f5f3] flex-1 py-2 px-5 text-center rounded-xl text-black shadow hover:shadow-md hover:bg-[#ebebeb] transition-all mx-3 disabled:bg-[#ebebeb] disabled:cursor-not-allowed"
                 onClick={showInput ? donate : () => setShowInput(true)}
+                disabled={loading}
               >
-                Donate
+                {loading ? 'Loading...' : 'Donate'}
               </button>
             </div>
           </div>
