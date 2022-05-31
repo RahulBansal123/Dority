@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import HomeContainer from '../containers/Home';
+import HomeContainer from '../containers/home';
 import Header from '../components/layout/header';
 import Footer from '../components/layout/footer';
 
