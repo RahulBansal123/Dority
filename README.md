@@ -13,7 +13,7 @@
 Dority is a decentralised, transparent, and commission-free donation platform that allows donors to contribute MATIC tokens to organisations using the L2 polygon network.
     <br />
     <br />
-    <a href="">View Demo</a>
+    <a href="https://dority.on.fleek.co/">View Demo</a>
     ·
     <a href="https://github.com/RahulBansal123/Dority/issues">Report Bug</a>
     ·
@@ -59,7 +59,7 @@ The PreMarket website is currently hosted on Fleek.
 
 Contracts are deployed at: [0x3D887915B0c02944E9BbD5A255f3b755Bb1bcAc6](https://mumbai.polygonscan.com/address/0x3D887915B0c02944E9BbD5A255f3b755Bb1bcAc6)
 
-Link to video: []()
+Link to video: [https://youtu.be/UJsjuXovRQo](https://youtu.be/UJsjuXovRQo)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -69,6 +69,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 - Next.js
 - Web3.js
+- Solidity
 - NFT.storage
 - Truffle
 - Polygon
